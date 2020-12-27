@@ -4,11 +4,14 @@ async function list(_, res){
     return res.json(list)
 }
 async function create(req, res){
+    const image = req.files.map(item=>{
+        return item.path
+    });
+    console.log(image)
     const {  
         name,
         race,
         age,
-        image,
         about
     } = req.body
     await connection('animals').insert({name,race,age,image,about});
@@ -16,11 +19,13 @@ async function create(req, res){
 }
 async function update(req, res){
     const { id } = req.params;
+    const image = req.files.map(item=>{
+        return item.path
+    });
     const {
         name,
         race,
         age,
-        image,
         about
     } = req.body;
     await connection('animals').where('id',id).update({
