@@ -20,7 +20,7 @@ async function create(req,res){
     return res.status(201).send();
 }
 async function update(req,res){
-    const id = req.params;
+    const { id } = req.params;
     const {
         name,
         email,
@@ -28,7 +28,6 @@ async function update(req,res){
         age,
         image
     } = req.body;
-
     await connection('users').where('id', id).update({
         name,
         email,
@@ -36,7 +35,6 @@ async function update(req,res){
         age,
         image
     })
-    console.log(req.body)
     return res.status(204).send();
 }
 module.exports = { list, create, update }
