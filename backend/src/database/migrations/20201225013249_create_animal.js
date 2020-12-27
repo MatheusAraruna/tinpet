@@ -7,6 +7,7 @@ exports.up = function(knex) {
     table.integer('age').notNullable();
     table.specificType('image', 'LONGTEXT').nullable();
     table.specificType('about','LONGTEXT').nullable();
+    table.boolean('adopted').notNullable().defaultTo(false);
   })
 };
 exports.down = function(knex) {

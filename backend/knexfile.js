@@ -4,9 +4,13 @@ module.exports = {
         connection:{
             filename: './src/database/mydb.sqlite'
         },
-        migrations: {
+        migrations:{
             directory: './src/database/migrations'
         },
+        seeds:{
+          directory: './src/database/seeds'
+        }
+        ,
         useNullAsDefault: true
     },
     production: {

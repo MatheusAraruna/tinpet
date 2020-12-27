@@ -1,5 +1,4 @@
-const connection = require('../../database/connections');
-
+const connection = require('../../database/connection');
 async function list(_, res){
     const list = await connection('animals').select('*');
     return res.json(list)
@@ -33,9 +32,4 @@ async function update(req, res){
     })
     return res.status(204).send();
 }
-async function del(req, res){
-    return res.status(204).send();
-}
-
-
-module.exports = { list, create, update, del }
+module.exports = { list, create, update }
