@@ -12,7 +12,7 @@ app.post('/animal', upload.array('image', 4), animalController.create)
 app.put('/animal/:id', upload.array('image', 4), animalController.update)
 //Routes users
 app.get('/user', userController.list)
-app.post('/user', upload.single('avatar'), userController.create)
-app.put('/user/:id', upload.single('avatar'), userController.update)
+app.post('/user', upload.single('image'), userController.create)
+app.put('/user/:id', upload.single('image'), userController.update)
 
 module.exports = app
