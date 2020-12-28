@@ -1,5 +1,6 @@
 # db testing
 */src/database/*.sqlite
+*/tmp/*
 
 # dependencies
 */node_modules
