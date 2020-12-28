@@ -22,6 +22,6 @@
 */yarn-debug.log*
 */yarn-error.log*
 
-*/backend/tmp/*
+/backend/tmp/*
 # db testing
-*/src/database/*.sqlite
+/src/database/*.sqlite
