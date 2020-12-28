@@ -7,7 +7,6 @@ async function create(req, res){
     const image = req.files.map(item=>{
         return item.path
     });
-    console.log(image)
     const {  
         name,
         race,
