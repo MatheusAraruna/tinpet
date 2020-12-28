@@ -24,4 +24,4 @@
 
 /backend/tmp/*
 # db testing
-/src/database/*.sqlite
+/backend/src/database/*.sqlite
