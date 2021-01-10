@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "migrate":"npx knex migrate:latest --env staging",
+    "seed":"npx knex seed:run --env staging"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
