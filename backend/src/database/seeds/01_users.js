@@ -11,6 +11,27 @@ exports.seed = function(knex) {
           pass:faker.internet.password(),
           age:18,
           image:faker.image.imageUrl()
+        },
+        {
+          name:faker.name.findName(),
+          email:faker.internet.email(),
+          pass:faker.internet.password(),
+          age:18,
+          image:faker.image.imageUrl()
+        },
+        {
+          name:faker.name.findName(),
+          email:faker.internet.email(),
+          pass:faker.internet.password(),
+          age:18,
+          image:faker.image.imageUrl()
+        },
+        {
+          name:faker.name.findName(),
+          email:faker.internet.email(),
+          pass:faker.internet.password(),
+          age:18,
+          image:faker.image.imageUrl()
         }
       ]);
     });

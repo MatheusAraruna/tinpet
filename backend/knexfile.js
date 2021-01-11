@@ -3,13 +3,13 @@ module.exports = {
     development:{
         client:'sqlite3',
         connection:{
-          filename: './src/database/mydb.sqlite'
+          filename: __dirname + '/src/database/mydb.sqlite'
         },
         migrations:{
-          directory: './src/database/migrations'
+          directory: __dirname + '/src/database/migrations'
         },
         seeds:{
-          directory: './src/database/seeds'
+          directory: __dirname + '/src/database/seeds'
         },
         useNullAsDefault: true
     },
@@ -24,10 +24,10 @@ module.exports = {
         charset:'utf8'
       },
       migrations: {
-        directory: './src/database/migrations'
+        directory: __dirname + '/src/database/migrations'
       },
       seeds:{
-        directory: './src/database/seeds'
+        directory: __dirname + '/src/database/seeds'
       }
     },
     production: {
@@ -41,10 +41,10 @@ module.exports = {
         charset: 'utf8'
       },
       migrations: {
-        directory: './src/database/migrations',
+        directory: __dirname + '/src/database/migrations',
       },
       seeds:{
-        directory: './src/database/seeds'
+        directory: __dirname +  '/src/database/seeds'
       }
     }
   };
