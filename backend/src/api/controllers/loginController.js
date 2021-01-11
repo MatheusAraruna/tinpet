@@ -17,8 +17,4 @@ async function login(req, res){
         });
     }).catch(err=>res.status(401).send(err));
 }
-async function logout(req, res){
-    const token = req.headers.authorization;
-    return res.json({ token })
-}
-module.exports = { login, logout }
+module.exports = login
