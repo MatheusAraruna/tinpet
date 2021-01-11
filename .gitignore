@@ -22,3 +22,5 @@
 /backend/tmp/*
 # db testing
 /backend/src/database/*.sqlite
+# env
+*/.env
