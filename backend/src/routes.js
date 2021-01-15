@@ -17,8 +17,6 @@ app.post('/user', upload.single('image'), userController.create)
 app.put('/user/:id', auth, upload.single('image'), userController.update)
 //Routes login/logout
 app.post('/login', loginController)
-//Dev routes
-app.get('/dev/user', userController.devList)
 //Route all
 app.all('*',(_,res)=>{
     return res.status(404).send({ message: "Route not found"})
