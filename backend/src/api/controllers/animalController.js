@@ -26,8 +26,7 @@ async function update(req, res){
         age,
         image,
         about
-    }).then(()=>{
-        res.status('204').send({ message: 'Update success'})
-    }).catch(err=>res.status(401).send(err))
+    }).then(() => res.status(200).send({ message: 'Update success'}))
+    .catch(err=>res.status(401).send(err))
 }
 module.exports = { list, create, update }

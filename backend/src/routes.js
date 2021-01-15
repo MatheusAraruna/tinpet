@@ -13,15 +13,16 @@ app.post('/animal', auth, upload.array('image', 4), animalController.create)
 app.put('/animal/:id', auth, upload.array('image', 4), animalController.update)
 //Routes users
 app.get('/user', auth, userController.list)
-app.post('/user', auth, upload.single('image'), userController.create)
+app.post('/user', upload.single('image'), userController.create)
 app.put('/user/:id', auth, upload.single('image'), userController.update)
 //Routes login/logout
 app.post('/login', loginController)
+//Dev routes
+app.get('/dev/user', userController.devList)
 //Route all
 app.all('*',(_,res)=>{
     return res.status(404).send({ message: "Route not found"})
 })
-//Dev routes
-app.get('/dev/user', auth, userController.devList)
+
 
 module.exports = app

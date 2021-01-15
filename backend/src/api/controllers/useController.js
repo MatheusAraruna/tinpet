@@ -15,7 +15,7 @@ async function create(req,res){
         email,
         pass,
         age,
-        image 
+        image
     }).then(id=>{
         const token = jwt.sign({ id }, process.env.SECRET, { expiresIn:86400 })
         return res.status(201).json({
@@ -36,9 +36,7 @@ async function update(req,res){
         image
     }).then(()=>{
         return res.status(200).send({ message: "Update success" })
-    }).catch(err=>
-        res.status(401).send(err)
-    )
+    }).catch(err=>res.status(401).send(err))
 }
 async function devList(_,res){
     await knex('users').select('*')

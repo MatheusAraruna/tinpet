@@ -7,6 +7,13 @@ exports.seed = function(knex) {
       return knex('users').insert([
         {
           name:faker.name.findName(),
+          email:"test123@test.com",
+          pass:"test",
+          age:18,
+          image:faker.image.imageUrl()
+        },
+        {
+          name:faker.name.findName(),
           email:faker.internet.email(),
           pass:faker.internet.password(),
           age:18,

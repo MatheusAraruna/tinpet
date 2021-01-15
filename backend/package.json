@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "migrate":"npx knex migrate:latest --env development",
-    "seed":"npx knex seed:run --env development"
+    "migrate": "npx knex migrate:latest --env development",
+    "seed": "npx knex seed:run --env development",
+    "test": "jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +24,16 @@
   },
   "devDependencies": {
     "faker": "^5.1.0",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.6",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "supertest": "^6.0.1"
+  },
+  "jest":{
+    "verbose":true,
+    "testEnvironment":"node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
