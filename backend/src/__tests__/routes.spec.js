@@ -96,7 +96,7 @@ describe('\n###### ROUTES USER ######', () => {
 //########### ANIMAL ROUTES ###############
 describe('\n###### ROUTES ANIMAL ######', () => {
     //LIST
-    it('Test route animal reponse list ', async done => {
+    it('Test route animal list ', async done => {
         await request(app).get('/animal')
             .then(res=>{
                 expect(res.statusCode).toBe(200);
