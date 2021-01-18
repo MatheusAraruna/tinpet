@@ -1,6 +1,7 @@
 const request = require('supertest');
 const con = require('../database/connection');
 const app = require('../server');
+const fs = require('fs')
 
 const image = __dirname + '/tmp/image.jpg';
 let token;
@@ -55,7 +56,9 @@ describe('\n###### ROUTES USER ######', () => {
         })
         .attach('image', image)
         .then(res=>{
+            const path = fs.existsSync(__dirname+'/../../tmp')
             expect(res.statusCode).toBe(201);
+            expect(path).toBe(true);
             expect(res.body).toHaveProperty('message')
             done();
         })
@@ -78,7 +81,9 @@ describe('\n###### ROUTES USER ######', () => {
         })
         .attach('image', image)
         .then(res=>{
+            const path = fs.existsSync(__dirname+'/../../tmp')
             expect(res.statusCode).toBe(200);
+            expect(path).toBe(true);
             expect(res.body).toHaveProperty('message');
             done();
         })
@@ -90,8 +95,8 @@ describe('\n###### ROUTES USER ######', () => {
 })
 //########### ANIMAL ROUTES ###############
 describe('\n###### ROUTES ANIMAL ######', () => {
-      //LIST
-      it('Test route animal reponse list ', async done => {
+    //LIST
+    it('Test route animal reponse list ', async done => {
         await request(app).get('/animal')
             .then(res=>{
                 expect(res.statusCode).toBe(200);
@@ -122,7 +127,9 @@ describe('\n###### ROUTES ANIMAL ######', () => {
             .attach('image', image)
             .attach('image', image)
             .then((res)=>{
+                const path = fs.existsSync(__dirname+'/../../tmp')
                 expect(res.statusCode).toBe(201);
+                expect(path).toBe(true);
                 expect(res.body).toHaveProperty('message')
                 done();
             })
@@ -140,16 +147,18 @@ describe('\n###### ROUTES ANIMAL ######', () => {
             })
             .field({
                 name:"Caramelozinn",
-                race:"vira-lata",
-                age:19,
-                about:'The most pretty dog in the world'
+                race:"vira-lactus-supremos",
+                age:999999999999999999999,
+                about:'The most pretty dog in the universe'
             })
             .attach('image', image)
             .attach('image', image)
             .attach('image', image)
             .attach('image', image)
             .then( res =>{
+                const path = fs.existsSync(__dirname+'/../../tmp')
                 expect(res.statusCode).toBe(200);
+                expect(path).toBe(true);
                 expect(res.body).toHaveProperty('message')
                 done();
             })
